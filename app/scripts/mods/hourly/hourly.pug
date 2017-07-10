@@ -1,0 +1,6 @@
+custom-loader(ng-if='vm.loading')
+div(ng-if='vm.componentList !== null')
+    h2.title-weather
+        span Previsión por horas para {{vm.city | capitalize}}
+    .table-hourly.center-block.no-float.col-md-12
+        custom-table(weather-hourly='vm.componentList' unit-temp='vm.unitTempUsed')

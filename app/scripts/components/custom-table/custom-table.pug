@@ -1,0 +1,12 @@
+table.custom-table.col-md-12
+    tr(ng-repeat-start='(key, value) in $ctrl.weatherHourly')
+        td.date(colspan="2") {{key}}
+    tr.prediction(ng-repeat='elem in value' ng-repeat-end)
+        td.col-md-2
+            span {{elem.date | date : 'HH:mm'}}
+            img(ng-src="{{ $ctrl.getImg(elem.icon) }}")
+        td.col-md-10.info
+            span.temp {{ elem.temp | temperature:'C':vm.unitTempUsed }}
+            span {{ elem.description | capitalize }}
+            span(ng-if="elem.rain") {{ elem.rain | number : 2 | rain }}
+            div Viento: {{ elem.windSpeed | speed }} Nubes: {{ elem.clouds | percentage }}

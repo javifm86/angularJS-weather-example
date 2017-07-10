@@ -1,0 +1,15 @@
+doctype html
+html#ng-app(lang='es', ng-app='weatherApp', ng-controller='AppCtrl as vmApp')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        meta(http-equiv='X-UA-Compatible', content='ie=edge')
+        title Angular 1
+        // Custom CSS
+        link(href='css/main.css', rel='stylesheet')
+    body
+        .container
+            nav-app(tabs='vmApp.tabs', control='vmApp.control')
+        .container
+            div(ng-view='')
+        script(src='js/main.js')

@@ -1,0 +1,8 @@
+nav.navbar.navbar-inverse
+    .container
+        .navbar-header
+            a.navbar-brand(href="#") Weather app
+        .collapse.navbar-collapse
+            ul.nav.navbar-nav
+                li(ng-repeat="tab in vm.tabs", ng-show="tab.show", ng-class="{active: vm.isPath(tab.path)}")
+                    a(href="#{{tab.path}}") {{tab.name}}

@@ -1,0 +1,37 @@
+.input-group.margin-b-15
+    input.form-control(type="text", placeholder="Introduce ciudad", ng-model="vm.city")
+    span.input-group-btn
+        button.btn.btn-primary(ng-click="vm.search()", type="button", ng-disabled="vm.city === ''") Buscar
+.alert(ng-class="vm.getAlertClasses()", role="alert", ng-show="vm.error !== null")
+    | {{vm.error}}
+custom-loader(ng-if='vm.loading')
+.row(ng-show="vm.citySaved")
+    .col-md-12
+        hr
+        h2.title-weather
+            span Tiempo actual en {{vm.citySaved | capitalize}}:
+                img(ng-src="{{vm.img}}")
+                | {{vm.temperature | temperature:'C':vm.unitTempUsed}} {{vm.description | capitalize}}
+
+    .col-md-8.center-block.no-float
+        table.table.table-bordered.table-striped.text-center
+            tbody
+                tr
+                    td Viento
+                    td {{vm.wind | speed}}
+                tr
+                    td Presión
+                    td#weather-widget-cloudiness {{vm.pressure | pressure}}
+                tr
+                    td Humedad
+                    td#weather-widget-pressure {{vm.humidity | percentage}}
+                tr
+                    td Amanecer
+                    td#weather-widget-humidity {{vm.sunrise | date:'H:mm'}}
+                tr
+                    td Anochecer
+                    td#weather-widget-sunrise {{vm.sunset | date:'H:mm'}}
+                tr
+                    td Mapa
+                    td
+                        a(ng-href="{{vm.googleMaps}}") Ver en el mapa

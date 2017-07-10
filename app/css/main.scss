@@ -1,0 +1,244 @@
+@import 'non-responsive.scss';
+@import '../../node_modules/bootstrap/dist/css/bootstrap.min';
+
+@import '../scripts/components/custom-table/custom-table.scss';
+
+/*
+    When centering a page with CSS like margin: 0 auto;, 
+    there's a small gotcha: the page will 'jump' a little 
+    on certain browsers when navigating between short and long pages. 
+    This is because the scrollbar gets hidden with short 
+    pages and is shown again with longer pages,
+    which makes the page move a little horizontally.
+    classic fix:
+    html {
+        overflow-y: scroll;
+    }
+*/
+
+// New fix
+html {
+    margin-left: calc(100vw - 100%);
+    margin-right: 0;
+}
+
+
+/*
+    There's one small issue: when using responsive web design (which you should!), 
+    it gets quite obvious that the margin at the left is bigger than at the right when 
+    the page is made smaller. This won't be an issue on mobile because scrollbars aren't 
+    normally shown there, but it just looks ugly on a desktop browser when the browser is resized. 
+    This can be fixed by only enabling this feature on wider viewports:
+*/
+
+@media screen and (min-width: 960px) {
+    html {
+        margin-left: calc(100vw - 100%);
+        margin-right: 0;
+    }
+}
+
+.margin-b-15 {
+    margin-bottom: 0.9375rem;
+}
+
+.margin-l-10 {
+    margin-left: 0.625rem;
+}
+
+.no-float {
+    float: none;
+}
+
+.title-weather {
+    font-size: 24px;
+    color: #337ab7;
+}
+
+.loader{
+	position:relative;
+	width:125px;
+	height:43px;
+	margin:auto;
+}
+
+.escapingBallG{
+	background-color:#337ab7;
+	position:absolute;
+	top:0;
+	left:0;
+	width:43px;
+	height:43px;
+	border-radius:21px;
+		-o-border-radius:21px;
+		-ms-border-radius:21px;
+		-webkit-border-radius:21px;
+		-moz-border-radius:21px;
+	animation-name:bounce_escapingBallG;
+		-o-animation-name:bounce_escapingBallG;
+		-ms-animation-name:bounce_escapingBallG;
+		-webkit-animation-name:bounce_escapingBallG;
+		-moz-animation-name:bounce_escapingBallG;
+	animation-duration:1.5s;
+		-o-animation-duration:1.5s;
+		-ms-animation-duration:1.5s;
+		-webkit-animation-duration:1.5s;
+		-moz-animation-duration:1.5s;
+	animation-iteration-count:infinite;
+		-o-animation-iteration-count:infinite;
+		-ms-animation-iteration-count:infinite;
+		-webkit-animation-iteration-count:infinite;
+		-moz-animation-iteration-count:infinite;
+	animation-timing-function:linear;
+		-o-animation-timing-function:linear;
+		-ms-animation-timing-function:linear;
+		-webkit-animation-timing-function:linear;
+		-moz-animation-timing-function:linear;
+	animation-delay:0s;
+		-o-animation-delay:0s;
+		-ms-animation-delay:0s;
+		-webkit-animation-delay:0s;
+		-moz-animation-delay:0s;
+	transform:scale(0.5, 1);
+		-o-transform:scale(0.5, 1);
+		-ms-transform:scale(0.5, 1);
+		-webkit-transform:scale(0.5, 1);
+		-moz-transform:scale(0.5, 1);
+}
+
+
+
+@keyframes bounce_escapingBallG{
+	0%{
+		left:0px;
+		transform:scale(0.5, 1);
+	}
+
+	25%{
+		left:41px;
+		transform:scale(1, 0.5);
+	}
+
+	50%{
+		left:103px;
+		transform:scale(0.5, 1);
+	}
+
+	75%{
+		left:41px;
+		transform:scale(1, 0.5);
+	}
+
+	100%{
+		left:0px;
+		transform:scale(0.5, 1);
+	}
+}
+
+@-o-keyframes bounce_escapingBallG{
+	0%{
+		left:0px;
+		-o-transform:scale(0.5, 1);
+	}
+
+	25%{
+		left:41px;
+		-o-transform:scale(1, 0.5);
+	}
+
+	50%{
+		left:103px;
+		-o-transform:scale(0.5, 1);
+	}
+
+	75%{
+		left:41px;
+		-o-transform:scale(1, 0.5);
+	}
+
+	100%{
+		left:0px;
+		-o-transform:scale(0.5, 1);
+	}
+}
+
+@-ms-keyframes bounce_escapingBallG{
+	0%{
+		left:0px;
+		-ms-transform:scale(0.5, 1);
+	}
+
+	25%{
+		left:41px;
+		-ms-transform:scale(1, 0.5);
+	}
+
+	50%{
+		left:103px;
+		-ms-transform:scale(0.5, 1);
+	}
+
+	75%{
+		left:41px;
+		-ms-transform:scale(1, 0.5);
+	}
+
+	100%{
+		left:0px;
+		-ms-transform:scale(0.5, 1);
+	}
+}
+
+@-webkit-keyframes bounce_escapingBallG{
+	0%{
+		left:0px;
+		-webkit-transform:scale(0.5, 1);
+	}
+
+	25%{
+		left:41px;
+		-webkit-transform:scale(1, 0.5);
+	}
+
+	50%{
+		left:103px;
+		-webkit-transform:scale(0.5, 1);
+	}
+
+	75%{
+		left:41px;
+		-webkit-transform:scale(1, 0.5);
+	}
+
+	100%{
+		left:0px;
+		-webkit-transform:scale(0.5, 1);
+	}
+}
+
+@-moz-keyframes bounce_escapingBallG{
+	0%{
+		left:0px;
+		-moz-transform:scale(0.5, 1);
+	}
+
+	25%{
+		left:41px;
+		-moz-transform:scale(1, 0.5);
+	}
+
+	50%{
+		left:103px;
+		-moz-transform:scale(0.5, 1);
+	}
+
+	75%{
+		left:41px;
+		-moz-transform:scale(1, 0.5);
+	}
+
+	100%{
+		left:0px;
+		-moz-transform:scale(0.5, 1);
+	}
+}

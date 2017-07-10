@@ -1,0 +1,10 @@
+node_modules
+dist
+.tmp
+.sass-cache
+.DS_Store
+.thumb
+.vscode
+.authrc
+npm-debug.log
+*.zip

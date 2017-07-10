@@ -1,0 +1,26 @@
+{
+  "node": true,
+  "regexdash": true,
+  "browser": true,
+  "esnext": true,
+  "bitwise": true,
+  "camelcase": true,
+  "loopfunc": true,
+  "curly": true,
+  "eqeqeq": true,
+  "eqnull": true,
+  "noarg": true,
+  "quotmark": "single",
+  "undef": true,
+  "unused": true,
+  // "strict": true,
+  "latedef": false,
+  "jasmine": true,
+  "plusplus": false,
+  "expr": true,
+  "globals": {
+    "angular": true,
+    "define": true,
+    "console": true
+  }
+}
